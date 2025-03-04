@@ -1,0 +1,487 @@
+
+/* Jordan Smith */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+    font-family: 'Molle';
+    src: url(https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat );
+}
+
+@font-face {
+    font-family: 'Montserrat' ;
+    src: url(https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat );
+}
+
+:root{
+    --body-fonts: 'Montserrat', sans-serif;
+    --header-fonts: 'Molle', cursive ;
+    --yellow:#F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0 ;
+    --blue: #499BD2;
+    --dark-gray: #222222 ;
+    --light-gray:#EAEAEA ; 
+    --white: #FFFFFF;
+    --black: #000000;
+
+}
+
+#skip{
+    position: absolute;
+    left: -1000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+body{
+    background-color: var(--white);
+    font-family: var(--body-fonts);
+    color: var(--black);
+}
+
+header{
+    background-image: linear-gradient( var(--teal), var(--light-gray));
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr .5fr .5fr;
+    row-gap: 0px;
+
+}
+header a {
+    display: block;
+    grid-column-start: 1 ;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+   
+}
+header p{
+    display: block;
+    grid-column-start:1;
+    grid-column-end: 3 ;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    justify-self: center;
+
+}
+#menu-toggle{
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+
+}
+
+#menu-toggle a{ 
+    text-decoration: none;
+    color: var(--black);
+   
+}
+
+#menu-toggle a:hover{
+    color: var(--white);
+}
+
+#menu-toggle input{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -7;
+    left: -5;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+
+}
+
+#menu-toggle label{
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--yellow);
+    color: var(--black);
+    padding-left: 30px;
+    padding-right: 40px;
+    padding-top: 10px;
+}
+.sr-only{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+}
+
+nav ul {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: var(--teal);
+    border: solid 5px var(--dark-gray) ;
+    left:-1000%;
+
+}
+
+
+
+
+
+h1{
+    font-family: var(--header-fonts);
+    color: var(--black);
+    font-weight: bolder;
+    font-size: 30px ;
+    grid-column-start: 1 ;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 1fr;
+    justify-self: start;
+    padding-left: 40px;
+}
+
+h2{
+    font-family: var(--header-fonts);
+    color: var(--black);
+    font-weight: bold;
+    font-size: 30px ;
+
+}
+
+h3 {
+    font-family: var(--header-fonts);
+    color: var(--black);
+    font-weight: bold;
+    font-size: 25px ;
+
+}
+
+
+
+#intro {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+#intro h2 {
+    padding: 20px;
+    font-size: 25px;
+
+}
+#intro p {
+    padding: 20px;
+
+}
+
+
+
+
+#img-grid img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 10px;
+    width: 1fr;
+    
+}
+
+
+#plan {
+    background-color: var(--yellow);
+
+
+
+}
+
+#plan h3 {
+    display: block;
+    padding: 20px;
+
+}
+
+#plan h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px;
+
+
+}
+
+#plan div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+#plan div section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--teal);
+    border-style: solid;
+    border-color: var(--white);
+    border-width: 5px ;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    
+
+
+}
+
+#testimonials {
+    background-color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#testimonials h3{
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+#testimonials div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1fr;
+    margin: auto;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#testimonials div section {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+#testimonials h4{
+    font-size: larger;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+
+#testimonials q{
+    font-style: italic;
+    padding: 10px;
+    width: 200px;
+    
+
+}
+
+#about{
+    background-color: var(--blue);
+    display: flex;
+    flex-wrap: wrap;
+}
+#about h3{
+    padding: 20px;
+    width: 100%;
+    
+}
+
+#about div{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 100px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+#about div section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    
+
+}
+
+#about div img {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px;
+    
+
+}
+#about div h4{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#contact{
+    display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+
+}
+
+#contact h3{
+    width: 100%;
+    font-weight: bold;
+
+
+}
+
+#contact span{
+    font-family: var(--body-fonts);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 100;
+
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact input{
+    border: var(--purple) solid 2px;
+    padding: 10px;
+
+}
+#names{
+    display: flex;
+    flex-direction: column;
+}
+
+#names label{
+    padding-bottom: 10px;
+}
+
+
+#nums {
+    display: flex;
+    flex-direction: column;
+}
+
+#nums fieldset label {
+    display: flex;
+    padding-bottom: 10px;
+}
+#nums legend {
+    padding-bottom: 10px;
+}
+
+#selects option {
+    border: var(--purple) solid 2px;
+    padding: 10px;
+
+
+}
+
+#custom-select select{
+    border: var(--purple) solid 2px;
+
+}
+
+#mySubmit {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--purple);
+    color: var(--white);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+footer {
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer p {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+footer a {
+    padding: 5px;
+    color: var(--black);
+    text-decoration: none;
+}
+
